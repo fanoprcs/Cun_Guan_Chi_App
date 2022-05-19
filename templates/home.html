@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <title>Home</title>
+</head>
+
+<body class = "Main_theme">
+    <h1>Cun Guan Chi Identify</h1><br>
+    
+    <div style = "text-align:center;">
+      
+        <i style = "font-family: monospace; font-size:16px; color:#ccc">寸關尺簡介: </i><br>
+        <i style = "font-family: monospace; font-size:16px; color:#ccc">寸脈在五行中代表著火，可以檢測心和肺是否健康</i><br>
+        <i style = "font-family: monospace; font-size:16px; color:#ccc">關脈在五行中代表著木，可以檢測肝和脾是否健康</i><br>
+        <i style = "font-family: monospace; font-size:16px; color:#ccc">&nbsp;尺脈在五行中代表著水，可以檢測腎和膀胱是否健康</i><br>
+        <i style = "font-family: monospace; font-size:16px; color:#ccc">本系統透過機器學習蒐集大量的數據庫後，>根據手的形</i><br>
+        <i style = "font-family: monospace; font-size:16px; color:#ccc">來辨別出可能的寸關尺位置。以此完成寸關尺的預測!</i><br><br>
+        
+        <i style = "font-family: monospace; font-size:16px; color:#ccc">使用前請閱讀: </i><br>
+    <i style = "font-family: monospace; font-size:16px; color:#ccc">&nbsp;在光線良好且背景與手部顏色有落差效果會更好(黑色效果最好)。</i><br>
+    <i style = "font-family: monospace; font-size:16px; color:#ccc">&nbsp;範圍:需要露出完整手掌，以及一部分的手臂(一半以上)。</i><br>
+    <i style = "font-family: monospace; font-size:16px; color:#ccc">&nbsp;擺放位置: 手掌盡量正著擺放，手臂保持乾淨。</i><br>
+    <i style = "font-family: monospace; font-size:16px; color:#ccc">&nbsp;如果遇到標註紅點很怪或超出手臂之情況，表示手臂邊緣</i><br>
+    <i style = "font-family: monospace; font-size:16px; color:#ccc">&nbsp;與背景顏色太相像或手部偵測錯誤，需調整光線或背景。</i>
+        <h2>請選擇登入或進行註冊</h2>
+    <form action="{{ url_for('login') }}">
+        <button type="submit">登入</button>
+    </form><br>
+    <form action="{{ url_for('register') }}">
+        <button type="submit">註冊</button>
+    </form>
+    
+    </div>
+</body>
+
+</html>

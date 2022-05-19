@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <title>Home</title>
+</head>
+
+<body class = "Main_theme">
+    <h1>Cun Guan Chi Identify</h1><br>
+    
+    <div style = "text-align:center;">
+      <h2> {{ welcome_text }} {{ label_text }}</h2>
+        
+        <h3>請選擇要 進行預測 <br>或是 登錄 Label 位置 <br>或是 根據登錄位置顯示</h3>
+    <form action="{{ url_for('predict_home') }}">
+        <button type="submit">進行預測</button>
+    </form>
+    <form action="{{ url_for('record_home') }}">
+        <button type="submit">登錄位置</button>
+    </form>
+    <form action="{{ url_for('predictByrecord_home') }}">
+        <button type="submit">顯示登錄位置</button>
+    </form>
+    <a href="{{url_for('logout')}}">登出</a>
+    </div>
+</body>
+
+</html>

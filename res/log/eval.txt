@@ -1,0 +1,5 @@
+input size: 7500 
+classes number: 31 
+use pretrained: True 
+epochs: 221
+batch size: 128

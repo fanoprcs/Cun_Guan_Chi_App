@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--html:5 -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cun Guan Chi Identify</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+    
+<body class="Main_theme">
+    <h1>Cun Guan Chi Identify: Predict</h1>
+    <div id = "upload" style = "text-align:center;">
+    <form action="{{ url_for('choose_file')}}" method="POST" enctype = "multipart/form-data">
+
+        <input type = "file" size = "30" name = "photo"/>
+        <br>
+        <input type = "submit" value = "上傳圖片" style = "margin-top:15px;"  class = "button"/>
+    </form><br><br>
+    <img src = "{{ url_for('video_feed') }}" height = "80%">    
+    
+    <form action="{{ url_for('predict') }}" method="POST" enctype = "multipart/form-data">
+        <input type = "submit" value = "進行預測" style = "margin-top:5px;"  class = "button"/>
+    </form>
+    
+    <form action="{{ url_for('setCamera') }}" method="POST" enctype = "multipart/form-data">
+        <input type = "submit" value = "使用相機" style = "margin-top:10px;"  class = "button"/>
+    </form>
+    <br>
+    </div>
+    <div style = "text-align:center;">
+        {{ prediction_display_area }} <br><br>
+        <a href="{{url_for('select')}}">回上頁</a><br><br>
+        <a href="{{url_for('logout')}}">登出</a>
+    </div>
+    <i style = "font-family: monospace; font-size:16px; color:#ccc">使用限制: </i><br>
+    <i style = "font-family: monospace; font-size:16px; color:#ccc">&nbsp;--光線良好且背景與手部顏色有落差效果會更好(黑色效果最好)。</i><br>
+    <i style = "font-family: monospace; font-size:16px; color:#ccc">&nbsp;--需要露出完整手掌，以及一部分的手臂(一半以上)。</i><br>
+    <i style = "font-family: monospace; font-size:16px; color:#ccc">&nbsp;--手掌盡量正著擺放，手臂保持乾淨。</i><br>
+    <i style = "font-family: monospace; font-size:16px; color:#ccc">&nbsp;--如果遇到標註紅點很怪或超出手臂之情況，表示手臂</i><br>
+    <i style = "font-family: monospace; font-size:16px; color:#ccc">&nbsp;&nbsp;&nbsp;邊緣與背景顏色太相像或手部偵測錯誤，需調整光線或背景。</i>
+</body>
+</html>
